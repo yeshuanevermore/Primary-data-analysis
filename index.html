@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Первичный анализ данных</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Диаграмма 1-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Relevant');
+        data.addColumn('number', 'Part');
+        data.addRows([
+          ['Top', 35152],
+          ['Mid', 47125],
+          ['Bot', 184756],
+        ]);
+
+        // Set chart options
+        var options = {
+            'width':400,
+            'height':400,
+            pieHole: 0.70,
+            //title: 'Диаграмма 1. Доли релевантных сервисов от общего количества',
+            legend: { position: "none" },
+            colors:['#1414F9','#4242FA', "#787878"],
+            chartArea:{left:20,top:20, width: "90%", height: "90%"}
+        };
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_1_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+    <!--Диаграмма 2-->
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+  
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Rating');
+          data.addColumn('number', 'Quantity of App');
+          data.addRows([
+            ['1', 8],
+            ['1.1', 0],
+            ['1.2', 0],
+            ['1.3', 0],
+            ['1.4', 0],
+            ['1.5', 0],
+            ['1.6', 1],
+            ['1.7', 2],
+            ['1.8', 2],
+            ['1.9', 0],
+            ['2', 8],
+            ['2.1', 3],
+            ['2.2', 6],
+            ['2.3', 5],
+            ['2.4', 5],
+            ['2.5', 6],
+            ['2.6', 5],
+            ['2.7', 4],
+            ['2.8', 9],
+            ['2.9', 6],
+            ['3', 46],
+            ['3.1', 5],
+            ['3.2', 13],
+            ['3.3', 27],
+            ['3.4', 18],
+            ['3.5', 31],
+            ['3.6', 37],
+            ['3.7', 46],
+            ['3.8', 52],
+            ['3.9', 63],
+            ['4', 99],
+            ['4.1', 98],
+            ['4.2', 123],
+            ['4.3', 141],
+            ['4.4', 163],
+            ['4.5', 161],
+            ['4.6', 148],
+            ['4.7', 106],
+            ['4.8', 72],
+            ['4.9', 28],
+            ['5', 211],
+          ]);
+  
+          // Set chart options
+          var options = {
+              'width':900,
+              'height':400,
+              //title: 'Диаграмма 2. Распределение количества сервисов и приложений от рейтинга',
+              legend: { position: "none" },
+              colors:['#1414F9'],
+              chartArea:{left:60,top:20, width: "90%", height: "90%"}
+        };
+  
+          // Instantiate and draw our chart, passing in some options.
+          var chart = new google.visualization.ColumnChart(document.getElementById('chart_2_div'));
+          chart.draw(data, options);
+        }
+      </script>
+
+      <!--Диаграмма 3-->
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+  
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Rating');
+          data.addColumn('number', 'Part');
+          data.addRows([
+            ['1.0-3.9', 408],
+            ['4.0-5.0', 1350],
+          ]);
+  
+          // Set chart options
+          var options = {
+              'width':400,
+              'height':400,
+              pieHole: 0.70,
+              //title: 'Диаграмма 3. Распределение рейтинга по интервалам “1,0-3,9” и “4,0-5,0” значениям рейтинга',
+              legend: { position: "none" },
+              colors:["#787878", '#1414F9'],
+              chartArea:{left:20,top:20,width: "90%", height:"90%"}
+          };
+  
+          // Instantiate and draw our chart, passing in some options.
+          var chart = new google.visualization.PieChart(document.getElementById('chart_3_div'));
+          chart.draw(data, options);
+        }       
+      </script>
+
+        <!--Диаграмма 4-->
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+  
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Installs');
+          data.addColumn('number', 'Quantity of App');
+          data.addRows([
+            ['1+', 374],
+            ['5+', 210],
+            ['10+', 413],
+            ['50+', 179],
+            ['100+', 354],
+            ['500+', 155],
+            ['1.000.000+', 55],
+            ['5.000.000+', 10],
+            ['10.000.000+', 6],
+            ['50.000.000+', 1],
+            ['100.000.000+', 1],
+          ]);
+  
+          // Set chart options
+          var options = {
+              'width':900,
+              'height':400,
+              //title: 'Диаграмма 4. Распределение установок от количества сервисов и приложений',
+              legend: { position: "none" },
+              colors:['#1414F9'],
+              chartArea:{left:60,top:20, width: "90%", height: "90%"}
+        };
+  
+          // Instantiate and draw our chart, passing in some options.
+          var chart = new google.visualization.ColumnChart(document.getElementById('chart_4_div'));
+          chart.draw(data, options);
+        }
+      </script>
+
+            <!--Диаграмма 5-->
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+  
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Rating');
+          data.addColumn('number', 'Quantity of App');
+          data.addRows([
+            ['1', 139],
+            ['1.1', 0],
+            ['1.2', 3],
+            ['1.3', 6],
+            ['1.4', 8],
+            ['1.5', 17],
+            ['1.6', 7],
+            ['1.7', 10],
+            ['1.8', 16],
+            ['1.9', 9],
+            ['2', 70],
+            ['2.1', 16],
+            ['2.2', 26],
+            ['2.3', 70],
+            ['2.4', 25],
+            ['2.5', 46],
+            ['2.6', 42],
+            ['2.7', 59],
+            ['2.8', 73],
+            ['2.9', 65],
+            ['3', 361],
+            ['3.1', 149],
+            ['3.2', 210],
+            ['3.3', 266],
+            ['3.4', 331],
+            ['3.5', 422],
+            ['3.6', 423],
+            ['3.7', 698],
+            ['3.8', 788],
+            ['3.9', 883],
+            ['4', 1615],
+            ['4.1', 1688],
+            ['4.2', 2138],
+            ['4.3', 2911],
+            ['4.4', 3179],
+            ['4.5', 3551],
+            ['4.6', 3344],
+            ['4.7', 2837],
+            ['4.8', 2184],
+            ['4.9', 1185],
+            ['5', 3524],
+          ]);
+  
+          // Set chart options
+          var options = {
+              'width':900,
+              'height':400,
+              //title: 'Диаграмма 5. Распределение количества сервисов и приложений от рейтинга',
+              legend: { position: "none" },
+              colors:['#1414F9'],
+              chartArea:{left:60,top:20, width: "90%", height: "90%"}
+        };
+  
+          // Instantiate and draw our chart, passing in some options.
+          var chart = new google.visualization.ColumnChart(document.getElementById('chart_5_div'));
+          chart.draw(data, options);
+        }
+      </script>
+
+        <!--Диаграмма 6-->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+              function drawChart() {
+        
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Rating');
+                data.addColumn('number', 'Part');
+                data.addRows([
+                  ['1.0-3.9', 5238],
+                  ['4.0-5.0', 28156],
+                ]);
+        
+                // Set chart options
+                var options = {
+                    'width':400,
+                    'height':400,
+                    pieHole: 0.70,
+                    //title: 'Диаграмма 3. Распределение рейтинга по интервалам “1,0-3,9” и “4,0-5,0” значениям рейтинга',
+                    legend: { position: "none" },
+                    colors:["#787878", '#1414F9'],
+                    chartArea:{left:20,top:20,width: "90%", height:"90%"}
+                };
+        
+                // Instantiate and draw our chart, passing in some options.
+                var chart = new google.visualization.PieChart(document.getElementById('chart_6_div'));
+                chart.draw(data, options);
+              }       
+            </script>
+
+        <!--Диаграмма 7-->
+        <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+  
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Installs');
+          data.addColumn('number', 'Quantity of App');
+          data.addRows([
+            ['1+', 6985],
+            ['5+', 3830],
+            ['10+', 8842],
+            ['50+', 3476],
+            ['100+', 6668],
+            ['500+', 2841],
+            ['1.000.000+', 644],
+            ['5.000.000+', 63],
+            ['10.000.000+', 36],
+            ['50.000.000+', 1],
+            ['100.000.000+', 1],
+          ]);
+  
+          // Set chart options
+          var options = {
+              'width':900,
+              'height':400,
+              //title: 'Диаграмма 4. Распределение установок от количества сервисов и приложений',
+              legend: { position: "none" },
+              colors:['#1414F9'],
+              chartArea:{left:60,top:20, width: "90%", height: "90%"}
+        };
+  
+          // Instantiate and draw our chart, passing in some options.
+          var chart = new google.visualization.ColumnChart(document.getElementById('chart_7_div'));
+          chart.draw(data, options);
+        }
+      </script>
+</head>
+<body>
+    <h1 >Первичный анализ данных</h1>
+    <h2>Введение</h2>
+        <p>В рамках своего проекта, я решил сделать задачу интереснее - провести анализ
+    данных по одному из дата-сетов, которые можно найти на сайте <a href="https://www.kaggle.com/" target="_blank">kaggle.com</a>,
+    чтобы на время стать аналитиком данных и выполнить задачи:
+        </p>
+        <ul>
+            <li>Определить какое, предположительно, место будет занимать будущий сервис в магазинах приложений;
+            </li>
+            <li>Определить количество оценок по определенной категории сервиса от 1 до 5 и их распределение;
+             </li>
+            <li>Определить количество скачиваний и их распределение;
+            </li>
+            <li>Сделать вывод
+            </li>
+        </ul>
+        <p>В документе будет описан полный ход работы.</p>
+    <h2>Подготовка данных</h2>
+        <p>Исходный файл с данными в формате .csv, однако они были за 2019 год, чего вполне хватит для попытки анализа.
+        </p>
+        <p>Для работы использовал Excel, где отформатировал файл. В итоге получилась таблица такого вида:
+        </p>
+        <p class="caption">Таблица 1. Вид таблицы после форматирования>
+        </p>
+        <table class="table_1">
+                <tr class="semi-bold">
+                    <td>App Name</td>
+                    <td>Category</td>
+                    <td>Rating</td>
+                    <td>Reviews</td>
+                    <td>Installs</td>
+                    <td>Size</td>
+                    <td>Price</td>
+                    <td>Content Rating</td>
+                    <td>Last Updated</td>
+                    <td>Minimum Version</td>
+                    <td>Last Version</td>
+                </tr>
+                <tr>
+                    <td>DoorDash - Food Delivery</td>
+                    <td>FOOD_AND_DRINK</td>
+                    <td>4.548561573</td>
+                    <td>305034</td>
+                    <td>5,000,000+</td>
+                    <td>Varies with device</td>
+                    <td>0</td>
+                    <td>Everyone</td>
+                    <td>29.03.2019</td>
+                    <td>Varies with device</td>
+                    <td>Varies with device</td>
+                </tr>
+                <tr>
+                    <td>TripAdvisor Hotels Flights <br>Restaurants Attractions</br></td>
+                    <td>TRAVEL_AND_LOCAL</td>
+                    <td>4.400671482</td>
+                    <td>1207922</td>
+                    <td>100,000,000+</td>
+                    <td>Varies with device</td>
+                    <td>0</td>
+                    <td>Everyone</td>
+                    <td>29.03.2019</td>
+                    <td>Varies with device</td>
+                    <td>Varies with device</td>
+                </tr>
+                <tr>
+                    <td>Peapod</td>
+                    <td>SHOPPING</td>
+                    <td>3.656329393</td>
+                    <td>1967</td>
+                    <td>100,000+</td>
+                    <td>1.4M</td>
+                    <td>0</td>
+                    <td>Everyone</td>
+                    <td>20.09.2018</td>
+                    <td>5.0 and up</td>
+                    <td>2.2.0</td>
+                </tr>
+                <tr>
+                    <td>foodpanda - Local Food Delivery</td>
+                    <td>FOOD_AND_DRINK</td>
+                    <td>4.107232571</td>
+                    <td>389154</td>
+                    <td>10,000,000+</td>
+                    <td>16M</td>
+                    <td>0</td>
+                    <td>Everyone</td>
+                    <td>22.03.2019</td>
+                    <td>4.2 and up</td>
+                    <td>4.18.2</td>
+                </tr>
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+        </table>
+        <p>Теперь необходимо выбрать ту часть данных с которой пойдет дальнейшая работа,
+            а именно <strong>Category,</strong> <strong>Rating,</strong> <strong>Installs</strong> ввиду поставленных задач.
+        </p>
+        <p>Стоит обратить внимание, чтобы производить вычисления необходимо представить столбец
+           <strong>Rating</strong> в виде десятичной дроби с десятыми долями, через разделение с запятой;
+            данные столбца <strong>Installs</strong> представить без знака “+”, который означает “больше” указанного значения.
+        </p>
+        <p class="caption">Таблица 2. Вид таблицы с нужными данными
+        </p>
+        <table class="table_1">
+                    <tr class="semi-bold">
+                    <td>Category</td>
+                    <td>Rating</td>
+                    <td>Installs</td>
+                </tr>
+                <tr>
+                    <td>FOOD_AND_DRINK</td>
+                    <td>4,5</td>
+                    <td>5,000,000</td>
+                </tr>
+                <tr>
+                    <td>TRAVEL_AND_LOCAL</td>
+                    <td>4,4</td>
+                    <td>100,000,000</td>
+                </tr>
+                <tr>
+                    <td>SHOPPING</td>
+                    <td>3,7</td>
+                    <td>100,00</td>
+                </tr>
+                <tr>
+                    <td>FOOD_AND_DRINK</td>
+                    <td>4,1</td>
+                    <td>10,000,000</td>
+                </tr>
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+        </table>
+    <h2>Обработка данных</h2>
+         <p>Теперь нужно определить количество уникальных категорий и классифицировать категории по релевантности.
+         </p>
+         <p class="caption">Таблица 2. Вид таблицы с нужными данными
+         </p>
+         <table class="table_1">
+                <tr class="semi-bold">
+                <td>Category</td>
+                <td>Quantity</td>
+                <td>Percent</td>
+                <td>Relevant</td>
+            </tr>
+            <tr>
+                <td>ART_AND_DESIGN</td>
+                <td>1758</td>
+                <td>0,7%</td>
+                <td>Top</td>
+            </tr>
+            <tr>
+                <td>EDUCATION</td>
+                <td>33394</td>
+                <td>12,5%</td>
+                <td>Top</td>
+            </tr>
+            <tr>
+                <td>NEWS_AND_MAGAZINES</td>
+                <td>8030</td>
+                <td>3,0%</td>
+                <td>Mid</td>
+            </tr>
+            <tr>
+                <td>ENTERTAINMENT</td>
+                <td>20604</td>
+                <td>7,7%</td>
+                <td>Mid</td>
+            </tr>
+            <tr>
+                <td>EVENTS</td>
+                <td>615</td>
+                <td>0,2%</td>
+                <td>Mid</td>
+            </tr>
+            <tr>
+                <td>MUSIC_AND_AUDIO</td>
+                <td>17876</td>
+                <td>6,7%</td>
+                <td>Mid</td>
+            </tr>
+            <tr>
+                <td>Others</td>
+                <td>184756</td>
+                <td>69,2%</td>
+                <td>Bot</td>
+            </tr>
+        </table>
+        <p>
+        <span><strong>Зачем нужна была классификация по релевантности?</strong>
+        </span>
+        </p>
+        <p>MVP проект разрабатывается как сервис для просмотра и изучения изобразительного искусства,
+        следовательно более релевантными (Top) категориями будут ART_AND_DESIGN и EDUCATION,
+        а если проект будет расширяться, то предусматриваться, что сервис будет охватывать больше категорий.
+         </p>
+         <p>Например, он может позволить пользователям узнавать новости музеев, арт рынка или мероприятий, или т.п.
+        </p>
+        <p>Теперь представим значения в виде диаграммы.
+        </p>
+        <p class="caption">Диаграмма 1. Доли релевантных сервисов от общего количества
+        </p>
+        <!--Диаграмма 1-->
+        <div id="chart_1_div"></div>
+        <p>Дальнейшая работа пройдет только в рамках категорий ART AND DESIGN и EDUCATION.
+        </p>
+    <h3>Art and design</h3>
+        <p>Создадим новую таблицу с данными ART AND DESIGN.</p>
+        <p class="caption">Таблица 4. Сводная таблица с данными одной категории
+        </p>
+        <table class="table_1">
+                <tr class="semi-bold">
+                <td>Category</td>
+                <td>Rating</td>
+                <td>Installs</td>
+            </tr>
+            <tr>
+                <td>ART_AND_DESIGN</td>
+                <td>4,2</td>
+                <td>1,000,000</td>
+            </tr>
+            <tr>
+                <td>ART_AND_DESIGN</td>
+                <td>4,3</td>
+                <td>500,00</td>
+            </tr>
+            <tr>
+                <td>ART_AND_DESIGN</td>
+                <td>4,4</td>
+                <td>10,000,000</td>
+            </tr>
+            <tr>
+                <td>ART_AND_DESIGN</td>
+                <td>4,4</td>
+                <td>1,000,000</td>
+            </tr>
+            <tr>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+            </tr>
+        </table>
+        <p>Представим с помощью диаграмм как распределены данные.
+        </p>
+        <p class="caption">Диаграмма 2. Распределение количества сервисов и приложений от рейтинга
+        </p>
+        <!--Диаграмма 2-->
+        <div id="chart_2_div"></div>
+        <p class="caption">Диаграмма 3. Распределение рейтинга по интервалам “1,0-3,9” и “4,0-5,0” значениям рейтинга
+        </p>
+        <!--Диаграмма 3-->
+        <div id="chart_3_div"></div>
+        <p>Можно сделать вывод о том, что пользователи больше оценивают сервисы и приложения в интервале “4,0-5,0”
+        </p>
+        <p class="caption">Диаграмма 4. Распределение установок от количества сервисов и приложений
+        </p>
+        <!--Диаграмма 4-->
+        <div id="chart_4_div"></div>
+        <p>Довольно странные показания, но можно сделать скидку на то, что данные актуальны на 2019 год.
+        Значение 500,00+ говорит и о том, что количество установок может доходить до 1,000,000.
+        </p>
+        <p>Наше MVP проект должен находится в районе 500+ до 1,000,000 установок, а это 8,8% от
+        количества сервисов и приложений,что должно являться нормой.
+        </p>
+    <h3>Education</h3>
+        <p>Аналогично поступим с категорией EDUCATION.
+        </p>
+        <p class="caption">Таблица 5. Сводная таблица с данными одной категории
+        </p>
+            <table class="table_1">
+            <tr class="semi-bold">
+                <td>Category</td>
+                <td>Rating</td>
+                <td>Installs</td>
+            </tr>
+            <tr>
+                <td>EDUCATION</td>
+                <td>4,4</td>
+                <td>100,00</td>
+            </tr>
+            <tr>
+                <td>EDUCATION</td>
+                <td>4,1</td>
+                <td>1,000,000</td>
+            </tr>
+            <tr>
+                <td>EDUCATION</td>
+                <td>4,4</td>
+                <td>1,000,000</td>
+            </tr>
+            <tr>
+                <td>EDUCATION</td>
+                <td>4,3</td>
+                <td>50,00</td>
+            </tr>
+            <tr>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+            </tr>
+        </table>
+        <p class="caption">Диаграмма 5. Распределение количества сервисов и приложений от рейтинга
+        </p>
+        <!--Тут будет диаграмма 5-->
+        <div id="chart_5_div"></div>
+        <p class="caption">Диаграмма 6. Распределение рейтинга по интервалам “1,0-3,9” и “4,0-5,0” значениям рейтинга
+        </p>
+        <!--Тут будет диаграмма 6-->
+        <div id="chart_6_div"></div>
+        <p class="caption">Диаграмма 7. Распределение установок от количества сервисов и приложений
+        </p>
+        <!--Тут будет диаграмма 7-->
+        <div id="chart_7_div"></div>
+    <h2>Итог</h2>
+    <p>По этим данным можно сказать, что доля сервисов и приложений по основным категориям <br>Art and Design и Education
+        в совокупности меньше чем остальная доля (очевидно), что дает поле для реализации MVP проекта; пользователи
+        также охотно оставляют положительные комментарии, да и показатели установок довольно неплохие,
+        но не стоит забывать, что эти выводы основаны на устаревших данных.
+    </p>
+    <p>Возникает вопрос: а нужен ли такой продукт пользователям, если да, то как его можно популяризировать?
+    </p>
+    <p>Учитывая мои наблюдения — некоторым людям, если не большинству, нравится тема искусства (картины, художники и т.п.),
+        которая может побудить в них стремление к изучению, знаниям <br>и обретению компетенций. А что насчет популяризации,
+        то, канал “Правое полушарие интроверта” продвигает и предлагает людям курсы за счет обычной контекстной рекламы
+        и видеоконтента на YouTube, правда уже тут нужно больше ресурсов.
+    </p>
+    <footer>
+        <p>Автор: Верещагин Игорь</p>
+        <p><a href="https://yeshuanevermore.notion.site/d0a07ab81d324d5882d52df99c99a94d" target="_blank"
+        style="color:#1414F9; text-decoration: none;" >Notion</a></p>
+    </footer>
+</body>
+</html>
